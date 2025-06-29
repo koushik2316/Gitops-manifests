@@ -29,21 +29,22 @@ pipeline {
                 }
             }
         }
-        // stage('Push the changes to Git') {
-        //     steps {
-        //         echo 'Pushing changes to Git...'
-        //         sh """
-        //            git config --global user.name "koushik2316"
-        //            git config --global user.email "koushiknagendra2316@gmail.com"
-        //            git add deployment.yaml
-        //            git commit -m "Updated Deployment Manifest"
-        //         """
-        //         withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-        //           sh "git push https://github.com/koushik2316/gitops-register-app main"
-        //         }
-        //     }
-        // }
-    }
+        stage('Push the changes to Git') {
+            steps {
+                echo 'Pushing changes to Git...'
+                sh """
+                   git config --global user.name "koushik2316"
+                   git config --global user.email "koushiknagendra2316@gmail.com"
+                   git add deployment.yaml
+                   git commit -m "Updated Deployment Manifest"
+                """
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                  sh "git push https://github.com/koushik2316/gitops-register-app main"
+                }
+            }
+        }
+ 
+    }  
 
 
 
