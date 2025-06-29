@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: register-app
-          image: koushikn23/java-app-pipeline:1.0.0-10
+          image: koushikn23/java-app-pipeline:1.0.0-09
           resources:
             limits:
               memory: "256Mi"
