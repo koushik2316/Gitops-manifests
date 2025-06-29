@@ -28,8 +28,7 @@ pipeline {
                 """
                 }
             }
-        }
-        stage('Push the changes to Git') {
+            stage('Push the changes to Git') {
             steps {
                 echo 'Pushing changes to Git...'
                 sh """
@@ -42,9 +41,10 @@ pipeline {
                   sh "git push https://github.com/koushik2316/gitops-register-app main"
                 }
             }
-        }
- 
-    }  
+        }  
+    }
+}
+
 
 
 
